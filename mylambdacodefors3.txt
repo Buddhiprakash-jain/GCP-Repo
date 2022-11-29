@@ -1,0 +1,52 @@
+import boto3
+def lambda_handler(event, context):
+    s3 = boto3.resource('s3')
+    s3_client = boto3.client('s3')
+    bucket='mybucc111'
+    folder1 = "f1"
+    folder2 = "f2"
+    folder3 = "f3"
+    my_object = s3.Bucket(bucket)
+    
+    #for folder 1
+    objs1 = s3_client.list_objects_v2(Bucket=bucket,Prefix=folder1)
+    fileCount1 = objs1['KeyCount']
+    
+    #for folder 2
+    objs2 = s3_client.list_objects_v2(Bucket=bucket,Prefix=folder2)
+    fileCount2 = objs2['KeyCount']
+    
+    #for folder 3 
+    objs3 = s3_client.list_objects_v2(Bucket=bucket,Prefix=folder3)
+    fileCount3 = objs3['KeyCount']
+    
+    #Sorting for f1 folder
+    s_obj_f1 = my_object.objects.filter(Prefix=folder1)
+    s_files_f1 = [obj.key for obj in sorted( s_obj_f1, key=lambda x: x.last_modified,
+    reverse=True)]
+    spl_obj_f1 = s_files_f1[1].split("/")
+
+        
+    if fileCount1 > 2:
+       if fileCount2 == 1:
+            s3.Bucket(bucket).download_file(s_files_f1[1], '/tmp/'+spl_obj_f1[1])
+            s3.Bucket(bucket).upload_file('/tmp/'+spl_obj_f1[1], 'f2/'+spl_obj_f1[1])
+            response = s3_client.delete_object(Bucket=bucket, Key=s_files_f1[1])
+           
+       elif fileCount2 >= 2:
+            s3.Bucket(bucket).download_file(s_files_f1[1], '/tmp/'+spl_obj_f1[1])
+            s3.Bucket(bucket).upload_file('/tmp/'+spl_obj_f1[1], 'f2/'+spl_obj_f1[1])
+            response = s3_client.delete_object(Bucket=bucket, Key=s_files_f1[1])
+           
+           
+            #Sorting for f2 folder
+            s_obj_f2 = my_object.objects.filter(Prefix=folder2)
+            s_files_f2 = [obj.key for obj in sorted(s_obj_f2, key=lambda x: x.last_modified,
+            reverse=True)]
+            spl_obj_f2 = s_files_f2[1].split("/")
+            s3.Bucket(bucket).download_file(s_files_f2[1], '/tmp/'+spl_obj_f2[1])
+            s3.Bucket(bucket).upload_file('/tmp/'+spl_obj_f2[1], 'f3/'+spl_obj_f2[1])
+            response = s3_client.delete_object(Bucket=bucket, Key=s_files_f2[1])
+    
+    else:
+      print("First file uploaded")

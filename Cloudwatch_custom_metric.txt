@@ -1,0 +1,54 @@
+#Install CloudWatch agent
+#Next, use SSH or the Session Manager to connect with your EC2 instance. #First of all, you need to download the CloudWatch agent.
+
+cmd 1: cd /tmp
+cmd 2: wget https://s3.amazonaws.com/amazoncloudwatchagent/amazon_linux/amd64/latest/amazon-cloudwatch-agent.rpm
+
+#Next, install the agent.
+
+cmd 3: sudo rpm -U amazon-cloudwatch-agent.rpm
+
+#Are you not using Amazon Linux? Check out Download and Configure the CloudWatch Agent Using the Command Line for more information.
+
+#Configure CloudWatch agent
+#The following instructions will guide you through the process of configuring the CloudWatch agent.
+
+#Open an editor to create or edit the agent’s config file.
+
+cmd 4: sudo vi /opt/aws/amazon-cloudwatch-agent/etc/amazon-cloudwatch-agent.json
+
+#Copy and paste the following configuration written in JSON. A few #explanations:
+
+#metrics_collected defines the metrics that the agent will send to CloudWatch.
+#In this scenario, we are only sending the used_percent metric for a disk.
+#Please note that resources allows you to select specific disks. In this scenario, only the root volume / is monitored. Add additional volumes by adding their mount point if needed.
+
+
+{
+  "agent": {
+    "metrics_collection_interval": 60,
+    "run_as_user": "cwagent"
+  },
+  "metrics": {
+    "append_dimensions": {
+        "InstanceId": "${aws:InstanceId}"
+    },
+    "metrics_collected": {
+      "disk": {
+        "measurement": [
+          "used_percent"
+        ],
+        "metrics_collection_interval": 60,
+        "resources": [
+          "/"
+        ]
+      }
+    }
+  }
+}
+
+
+#After editing the configuration file, you should restart the agent and check the agent’s logs.
+
+cmd 5: sudo systemctl restart amazon-cloudwatch-agent
+cmd 6: tail -f /opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log
