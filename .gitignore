@@ -2,5 +2,5 @@
 *
 
 # But not these files...
-!.gitignore
+#!.gitignore
 !index.html
