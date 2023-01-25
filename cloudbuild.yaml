@@ -1,7 +1,7 @@
 steps:
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'gcr.io/${PROJECT_ID}/main', '.']
+    args: ['build', '-t', 'gcr.io/${PROJECT_ID}/dev', '.']
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'gcr.io/$PROJECT_ID/main']
+    args: ['push', 'gcr.io/$PROJECT_ID/dev']
   - name: 'gcr.io/cloud-builders/gcloud'
-    args: ["run", "deploy", "mainsvc", "--image", "gcr.io/${PROJECT_ID}/main", "--port", "80", "--platform", "managed", "--region","us-central1","--allow-unauthenticated"]
+    args: ["run", "deploy", "devsvc", "--image", "gcr.io/${PROJECT_ID}/dev", "--port", "80", "--platform", "managed", "--region","us-central1","--allow-unauthenticated"]
