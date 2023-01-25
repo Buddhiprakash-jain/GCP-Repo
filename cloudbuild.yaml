@@ -7,7 +7,7 @@ steps:
     args: ["run", "deploy", "mainsvc", "--image", "gcr.io/${PROJECT_ID}/main", "--port", "80", "--platform", "managed", "--region","us-central1","--allow-unauthenticated"]
   - name: 'gcr.io/cloud-builders/git'
     args: ['tag','v0.2']
-  - name: 'gcr.io/$PROJECT_ID/git'
+  - name: 'gcr.io/cloud-builders/git'
     entrypoint: 'bash'
     args: ['-c','cat .git/config']
   - name: 'gcr.io/cloud-builders/git'
