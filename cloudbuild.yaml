@@ -6,6 +6,6 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ["run", "deploy", "mainsvc", "--image", "gcr.io/${PROJECT_ID}/main", "--port", "80", "--platform", "managed", "--region","us-central1","--allow-unauthenticated"]
   - name: 'gcr.io/cloud-builders/git'
-    args: ['checkout', 'develop']
+    args: ['checkout', 'dev']
   - name: 'gcr.io/cloud-builders/git'
     args: ['push', 'origin', '--tags']
