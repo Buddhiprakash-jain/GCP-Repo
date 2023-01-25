@@ -17,3 +17,8 @@ steps:
    # args: ["push" , "https://'Buddhiprakash-#jain':'Buddhi8290@github.com/Buddhiprakash-jain/Extra_task_repo.git"]
   - name: 'ubuntu'
     args: ["echo","yes","|","ssh", "-T", "-p", "443", "git@ssh.github.com"]
+  - name: 'gcr.io/cloud-builders/git'
+    args: ['tag',"v0.2"]
+  - name: 'gcr.io/cloud-builders/git'
+    args: ['push','origin','--tags']
+  
