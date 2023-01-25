@@ -17,6 +17,8 @@ steps:
     entrypoint: 'bash'
     args: ['-c','cat .git/config']
   - name: 'gcr.io/cloud-builders/git'
+    args: ['config','--global','--list']
+  - name: 'gcr.io/cloud-builders/git'
     args: ['push','--tags','https://github.com/Buddhiprakash-jain/Extra_task_repo.git']
 
 
