@@ -5,8 +5,9 @@ steps:
     args: ['push', 'gcr.io/$PROJECT_ID/main']
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ["run", "deploy", "mainsvc", "--image", "gcr.io/${PROJECT_ID}/main", "--port", "80", "--platform", "managed", "--region","us-central1","--allow-unauthenticated"]
+  
   - name: 'gcr.io/cloud-builders/git'
-    args: ['tag','v0.2']
+    args: ['tag','v0.3']
   - name: 'gcr.io/cloud-builders/git'
     args: ['config', '--global', 'github.user', 'Buddhiprakash-jain']
   - name: 'gcr.io/cloud-builders/git'
