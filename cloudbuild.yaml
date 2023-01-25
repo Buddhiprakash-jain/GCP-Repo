@@ -6,4 +6,4 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ["run", "deploy", "mainsvc", "--image", "gcr.io/${PROJECT_ID}/main", "--port", "80", "--platform", "managed", "--region","us-central1","--allow-unauthenticated"]
   - name: 'gcr.io/cloud-builders/git'
-    args: ['push', 'origin', 'git@github.com:Buddhiprakash-jain/Extra_task_repo.git','--tags']
+    args: ['push', 'origin', 'https://github.com/Buddhiprakash-jain/Extra_task_repo.git','--tags']
