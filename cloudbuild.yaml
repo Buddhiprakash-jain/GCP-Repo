@@ -35,7 +35,7 @@ steps:
       - "-c"
       - |
         git config --global user.name Buddhiprakash-jain
-        git config --global user.email buddhijainmadhorajpura72@gmail.com'
+        git config --global user.email buddhijainmadhorajpura72@gmail.com
         git push --tags https://Buddhiprakash-jain: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@github.com/Buddhiprakash-jain/Extra_task_repo.git
            
 
