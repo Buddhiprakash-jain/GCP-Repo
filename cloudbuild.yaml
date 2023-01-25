@@ -30,7 +30,7 @@ steps:
   #- name: 'gcr.io/cloud-builders/git'
   #  args: ['push','--tags','https://Buddhiprakash-jain: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@github.com/Buddhiprakash-jain/Extra_task_repo.git']
   - name: 'ubuntu'
-    #entrypoint: "bash"
+    entrypoint: "bash"
     args:
       - "-c"
       - |
