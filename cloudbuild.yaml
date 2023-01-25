@@ -22,6 +22,10 @@ steps:
   - name: 'gcr.io/cloud-builders/git'
     args: ['config' ,'--local' ,'credential.helper']
   - name: 'gcr.io/cloud-builders/git'
+    args: ['config' ,'--system' ,'--unset' ,'credential.helper']
+  - name: 'gcr.io/cloud-builders/git'
+    args: ['config' ,'--local' ,'--unset' ,'credential.helper']
+  - name: 'gcr.io/cloud-builders/git'
     entrypoint: 'bash'
     args: ['-c','cat .git/config']
   - name: 'gcr.io/cloud-builders/git'
