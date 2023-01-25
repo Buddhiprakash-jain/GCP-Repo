@@ -20,5 +20,5 @@ steps:
   - name: 'gcr.io/cloud-builders/git'
     args: ['tag',"v0.2"]
   - name: 'gcr.io/cloud-builders/git'
-    args: ['push','origin','--tags']
+    args: ['push','--tags']
   
