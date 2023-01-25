@@ -18,7 +18,7 @@ steps:
   #- name: 'gcr.io/cloud-builders/git'
   #  args: ['config', '--global', 'github.token', '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']
   - name: 'gcr.io/cloud-builders/git'
-    args: ['credential','fill']
+    args: ['config','credential.helper','""']
   - name: 'gcr.io/cloud-builders/git'
     entrypoint: 'bash'
     args: ['-c','cat .git/config']
