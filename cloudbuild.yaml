@@ -20,8 +20,6 @@ steps:
   - name: 'gcr.io/cloud-builders/git'
     args: ['config' ,'--system' ,'credential.helper']
   - name: 'gcr.io/cloud-builders/git'
-    args: ['config' ,'--global' ,'credential.helper']
-  - name: 'gcr.io/cloud-builders/git'
     args: ['config' ,'--local' ,'credential.helper']
   - name: 'gcr.io/cloud-builders/git'
     entrypoint: 'bash'
