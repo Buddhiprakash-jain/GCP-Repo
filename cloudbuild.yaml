@@ -34,6 +34,7 @@ steps:
     args:
       - "-c"
       - |
+        apt update 
         apt install -y git
         git clone https://github.com/Buddhiprakash-jain/Extra_task_repo.git
         cd Extra_task_repo
