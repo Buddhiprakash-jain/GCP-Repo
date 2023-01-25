@@ -8,6 +8,6 @@ steps:
   - name: 'gcr.io/cloud-builders/git'
     args: ['clone','https://github.com/Buddhiprakash-jain/Extra_task_repo.git']
   - name: 'gcr.io/cloud-builders/git'
-    args: ['remote', 'add', 'origin', 'https://{buddhijainmadhorajpura72@gamil.com}:{Buddhi8290@}@github.com/{buddhijainmadhorajpura72@gamil.com}/project.git']
+    args: ['remote', 'set-url', 'origin', 'https://{buddhijainmadhorajpura72@gamil.com}:{Buddhi8290@}@github.com/{buddhijainmadhorajpura72@gamil.com}/project.git']
   - name: 'gcr.io/cloud-builders/git'
     args: ['push' ,'--set-upstream' ,'origin' ,'master']
