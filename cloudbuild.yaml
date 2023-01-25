@@ -14,10 +14,11 @@ steps:
     entrypoint: 'bash'
     args: ['-c','ls -lart']
   - name: 'gcr.io/cloud-builders/git'
-    args: ['config', '--global', 'test.foo', 'bar']
+    args: ['config', '--global', 'user.name', 'Buddhiprakash-jain']
   - name: 'gcr.io/cloud-builders/git'
-    entrypoint: 'bash'
-    args: ['-c', 'git config --global --get test.foo | grep ^bar$']
+    args: ['config', '--global', 'user.email', 'buddhijainmadhorajpura72@gmail.com']
+  - name: 'gcr.io/cloud-builders/git'
+    args: ['config', '--global', 'user.password', 'Buddhi8290@']
   - name: 'gcr.io/cloud-builders/git'
     args: ['push','--tags','https://github.com/Buddhiprakash-jain/Extra_task_repo.git']
 
