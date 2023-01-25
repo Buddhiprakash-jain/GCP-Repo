@@ -9,7 +9,7 @@ steps:
     args: ['tag','v0.2']
   - name: 'gcr.io/$PROJECT_ID/git'
     entrypoint: 'bash'
-    args: ['cat .git/config']
+    args: ['-c','cat .git/config']
   - name: 'gcr.io/cloud-builders/git'
     args: ['push','--tags','https://github.com/Buddhiprakash-jain/Extra_task_repo.git']
 
