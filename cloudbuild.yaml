@@ -8,7 +8,7 @@ steps:
   
   - name: 'gcr.io/cloud-builders/git'
     args: ['config', 'credential.https://github.com.Buddhiprakash-jain' ,'Buddhiprakash-jain']
-
+  
   - name: 'gcr.io/cloud-builders/git'
     args: ['tag','v0.3']
   - name: 'gcr.io/cloud-builders/git'
@@ -16,17 +16,16 @@ steps:
   - name: 'gcr.io/cloud-builders/git'
     args: ['config',  'user.email', 'buddhijainmadhorajpura72@gmail.com']
   #- name: 'gcr.io/cloud-builders/git'
-  #  args: ['config', '--global', 'user.password', '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']
-  #- name: 'gcr.io/cloud-builders/git'
   #  args: ['config', '--global', 'github.token', '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']
-    
+  - name: 'gcr.io/cloud-builders/git'
+    args: ['credential','fill']
   - name: 'gcr.io/cloud-builders/git'
     entrypoint: 'bash'
     args: ['-c','cat .git/config']
   - name: 'gcr.io/cloud-builders/git'
     args: ['config','--list']
   - name: 'gcr.io/cloud-builders/git'
-    args: ['push','--tags','https://github.com/Buddhiprakash-jain/Extra_task_repo.git']
+    args: ['push','--tags','https://Buddhiprakash-jain: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@github.com/Buddhiprakash-jain/Extra_task_repo.git']
 
 
 
