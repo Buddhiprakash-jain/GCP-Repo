@@ -8,11 +8,14 @@ steps:
   - name: 'gcr.io/cloud-builders/git'
     args: ['tag','v0.2']
   - name: 'gcr.io/cloud-builders/git'
-    args: ['config', '--global', 'user.name', 'Buddhiprakash-jain']
+    args: ['config', '--global', 'github.user', 'Buddhiprakash-jain']
   - name: 'gcr.io/cloud-builders/git'
     args: ['config', '--global', 'user.email', 'buddhijainmadhorajpura72@gmail.com']
+  #- name: 'gcr.io/cloud-builders/git'
+  #  args: ['config', '--global', 'user.password', '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']
   - name: 'gcr.io/cloud-builders/git'
-    args: ['config', '--global', 'user.password', 'Buddhi8290@']
+    args: ['config', '--global', 'github.token', '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']
+    
   - name: 'gcr.io/cloud-builders/git'
     entrypoint: 'bash'
     args: ['-c','cat .git/config']
