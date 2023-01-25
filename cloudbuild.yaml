@@ -9,9 +9,9 @@ steps:
   - name: 'gcr.io/cloud-builders/git'
     args: ['tag','v0.3']
   - name: 'gcr.io/cloud-builders/git'
-    args: ['config', '--global', 'user.name', 'Buddhiprakash-jain']
+    args: ['config',  'user.name', 'Buddhiprakash-jain']
   - name: 'gcr.io/cloud-builders/git'
-    args: ['config', '--global', 'user.email', 'buddhijainmadhorajpura72@gmail.com']
+    args: ['config',  'user.email', 'buddhijainmadhorajpura72@gmail.com']
   #- name: 'gcr.io/cloud-builders/git'
   #  args: ['config', '--global', 'user.password', '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']
   - name: 'gcr.io/cloud-builders/git'
