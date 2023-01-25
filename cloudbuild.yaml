@@ -14,5 +14,5 @@ steps:
  # - name: 'gcr.io/cloud-builders/git'
  #   args: ['clone','https://github.com/Buddhiprakash-#jain/Extra_task_repo.git']
   - name: 'gcr.io/cloud-builders/git'
-    args: ["remote" ,  "add" , "origin", "https://Buddhiprakash-jain:Buddhi8290@@github.com/Buddhiprakash-jain/
+    args: ["push" , "https://Buddhiprakash-jain:Buddhi8290@@github.com/Buddhiprakash-jain/
 Extra_task_repo.git"]
