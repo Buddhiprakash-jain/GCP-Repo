@@ -5,20 +5,10 @@ steps:
     args: ['push', 'gcr.io/$PROJECT_ID/main']
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ["run", "deploy", "mainsvc", "--image", "gcr.io/${PROJECT_ID}/main", "--port", "80", "--platform", "managed", "--region","us-central1","--allow-unauthenticated"]
- # - name: 'gcr.io/cloud-builders/git'
- #   args: ['config','--global','user.name',"Buddhiprakash-jain"]
- # - name: 'gcr.io/cloud-builders/git'
-  #  args: ['config','--#global','user.email',"buddhijainmadhorajpura72@gmail.com"]
- # - name: 'gcr.io/cloud-builders/git'
- #   args: ['config','--global','user.password',"Buddhi8290@"]
- # - name: 'gcr.io/cloud-builders/git'
- #   args: ['clone','https://github.com/Buddhiprakash-#jain/Extra_task_repo.git']
-  #- name: 'gcr.io/cloud-builders/git'
-   # args: ["push" , "https://'Buddhiprakash-#jain':'Buddhi8290@github.com/Buddhiprakash-jain/Extra_task_repo.git"]
-  - name: 'ubuntu'
-    args: ["echo","yes","|","ssh", "-T", "-p", "443", "git@ssh.github.com"]
-  - name: 'ubuntu'
-    args: ['git','tag',"v0.2"]
-  - name: 'ubuntu'
-    args: ['git','push','--tags']
+  - name: 'gcr.io/cloud-builders/git'
+    args: ['tag','v0.2']
+  - name: 'gcr.io/cloud-builders/git'
+    args: ['push','--tags'] 
+
+
   
