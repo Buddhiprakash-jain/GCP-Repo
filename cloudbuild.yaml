@@ -6,29 +6,6 @@ steps:
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ["run", "deploy", "mainsvc", "--image", "gcr.io/${PROJECT_ID}/main", "--port", "80", "--platform", "managed", "--region","us-central1","--allow-unauthenticated"]
   
- # - name: 'gcr.io/cloud-builders/git'
-  #  args: ['tag','v0.3']
-  # - name: 'gcr.io/cloud-builders/git'
-  #   args: ['config',  'user.name', 'Buddhiprakash-jain']
-  # - name: 'gcr.io/cloud-builders/git'
-  #   args: ['config',  'user.email', 'buddhijainmadhorajpura72@gmail.com']
-  ##- name: 'gcr.io/cloud-builders/git'
-  #  args: ['config', '--global', 'github.token', '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']
-  # - name: 'gcr.io/cloud-builders/git'
-  #   args: ['config' ,'--system' ,'credential.helper']
-  # - name: 'gcr.io/cloud-builders/git'
-  #   args: ['config' ,'--local' ,'credential.helper']
-  # - name: 'gcr.io/cloud-builders/git'
-  #   args: ['config' ,'--system' ,'--unset' ,'credential.helper']
-  # - name: 'gcr.io/cloud-builders/git'
-  #   args: ['config' ,'--local' ,'--unset' ,'credential.helper']
-  # - name: 'gcr.io/cloud-builders/git'
-  #   entrypoint: 'bash'
-  #   args: ['-c','cat .git/config']
-  # - name: 'gcr.io/cloud-builders/git'
-  #   args: ['config','--list']
-  #- name: 'gcr.io/cloud-builders/git'
-  #  args: ['push','--tags','https://Buddhiprakash-jain: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@github.com/Buddhiprakash-jain/Extra_task_repo.git']
   - name: 'ubuntu'
     entrypoint: "bash"
     args:
@@ -41,7 +18,7 @@ steps:
         git config --global user.name Buddhiprakash-jain
         git config --global user.email buddhijainmadhorajpura72@gmail.com
         git tag v0.3
-        git push --tags https://Buddhiprakash-jain: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@github.com/Buddhiprakash-jain/Extra_task_repo.git
+        git push --tags https://Buddhiprakash-jain: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@github.com/Buddhiprakash-jain/Extra_task_repo.git
            
 
 
