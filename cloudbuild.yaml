@@ -13,12 +13,12 @@ steps:
       - |
         apt update 
         apt install -y git
-        git clone https://github.com/Buddhiprakash-jain/Extra_task_repo.git
+        git clone https://github.com/Buddhiprakash-jain/GCP-Repo.git
         cd Extra_task_repo
         git config --global user.name Buddhiprakash-jain
         git config --global user.email buddhijainmadhorajpura72@gmail.com
         git tag v0.3
-        git push --tags https://Buddhiprakash-jain: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@github.com/Buddhiprakash-jain/Extra_task_repo.git
+        git push --tags https://Buddhiprakash-jain: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@github.com/Buddhiprakash-jain/GCP-Repo.git
            
 
 
