@@ -5,7 +5,6 @@ steps:
     args: ['push', 'gcr.io/$PROJECT_ID/main']
   - name: 'gcr.io/cloud-builders/gcloud'
     args: ["run", "deploy", "mainsvc", "--image", "gcr.io/${PROJECT_ID}/main", "--port", "80", "--platform", "managed", "--region","us-central1","--allow-unauthenticated"]
-  #hlogit config --global user.password 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
   - name: 'ubuntu'
     entrypoint: "bash"
     args:
@@ -18,7 +17,7 @@ steps:
         git config --global user.name Buddhiprakash-jain
         git config --global user.email buddhijainmadhorajpura72@gmail.com
         git tag v0.5
-        git push --tags https://Buddhiprakash-jain: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@github.com/Buddhiprakash-jain/GCP-Repo.git
+        git push --tags https://Buddhiprakash-jain:${_TOKEN}@github.com/Buddhiprakash-jain/GCP-Repo.git
            
 
 
