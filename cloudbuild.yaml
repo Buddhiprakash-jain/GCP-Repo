@@ -17,7 +17,8 @@ steps:
         cd GCP-Repo
         git config --global user.name Buddhiprakash-jain
         git config --global user.email buddhijainmadhorajpura72@gmail.com
-        git tag v0.3
+        git config --global user.password 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
+        git tag v0.4
         git push --tags https://Buddhiprakash-jain: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@github.com/Buddhiprakash-jain/GCP-Repo.git
            
 
