@@ -14,7 +14,7 @@ steps:
         apt update 
         apt install -y git
         git clone https://github.com/Buddhiprakash-jain/GCP-Repo.git
-        cd Extra_task_repo
+        cd GCP-Repo
         git config --global user.name Buddhiprakash-jain
         git config --global user.email buddhijainmadhorajpura72@gmail.com
         git tag v0.3
