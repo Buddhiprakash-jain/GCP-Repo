@@ -1,3 +1,7 @@
 steps:
-  - name: 'gcr.io/cloud-builders/terraform'
-    args: ['terraform' , 'init']
+  - name: 'hashicorp/terraform:1.0.0'
+    entrypoint: 'sh'
+    args:
+    - '-c'
+    - |
+      terraform init
