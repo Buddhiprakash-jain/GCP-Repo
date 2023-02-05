@@ -9,7 +9,7 @@ data "google_iam_policy" "admin" {
 }
 
 resource "google_service_account" "sa" {
-  project = basic-tube-373302
+  project = "basic-tube-373302"
   account_id   = "myaccc"
   display_name = "bpacc"
 }
