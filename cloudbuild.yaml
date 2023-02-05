@@ -1,3 +1,3 @@
 steps:
-  - name: 'gcr.io/cloud-builders/gcloud'
-    args: ['beta','terraform' , 'init']
+  - name: 'gcr.io/cloud-builders/terraform'
+    args: ['terraform' , 'init']
